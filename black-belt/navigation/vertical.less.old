@@ -1,0 +1,47 @@
+.navigation-vertical {
+    position: relative;
+    width: 200px;
+    border:1px solid #444;
+    .dropdown-menu {
+        left: 100%;
+        margin-top: -20px;
+        #shape > .caret(left, 7px, #fff, #444);
+        margin-left: 2px;
+    }
+
+    a {
+        position: relative;
+        #link > .colors(#fff, #ffff, #fff, #fff, #fff);
+        border-bottom: 1px solid #eee;
+        padding: 0 20px;
+        display: block;
+        text-decoration: none;
+        background-color: #4D4D4D;
+        &:hover {
+            background-color: #00ff00;
+            .caret {
+                #animation > .init(2s);
+                #animation > .rotate;
+                #animation > .infinite;
+            }
+        }
+    }
+    > li {
+        &:hover {
+            .caret {
+
+            }
+            .dropdown-menu {
+            //  #animation > .init(2s);
+            //  #animation > .hinge;
+            }
+        }
+    }
+
+
+    .caret {
+        // Only change color
+        #shape > .triangle(right, 7px, @navigationBarCaretColor) ;
+        float: right;
+    }
+}

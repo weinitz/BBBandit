@@ -1,0 +1,39 @@
+// A linear navigation
+.navigation-horizontal {
+    &.linear {
+      //  #list > .inline;
+       // #list > .inline-block-list;
+    }
+
+    > li > .sub-navigation,
+    .linear {
+        // Not cool I know this is a temporarly sulotion
+        padding-left: @baseLineHeight !important;
+    }
+
+    > li > .sub-navigation,
+    > li > .linear {
+        #list > .inline-block-list;
+        left:0;
+        width: 100%;
+        > li > a {
+            padding: 10px 15px 10px;
+        }
+    }
+}
+
+.dropup, .fixed-bottom {
+    > li > .sub-navigation,
+    .linear {
+        top:auto;
+        bottom: 100%;
+    }
+}
+
+.dropdown, .fixed-top {
+    > li > .sub-navigation,
+    .linear {
+        top:100%;
+        bottom: auto;
+    }
+}

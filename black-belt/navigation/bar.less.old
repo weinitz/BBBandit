@@ -1,0 +1,62 @@
+// navigation-bar is a bar with links that can be
+// fixed or static.
+.navigation-bar {
+    height:@navigationBarHeight;
+    line-height: @navigationBarHeight;
+
+    #gradient > .vertical(@navigationBarBackground, @navigationBarBackgroundHighlight);
+
+    // Fixed to the top or bottom of the browser
+    &.fixed-bottom, &.fixed-top {
+        .stretch(x, fixed);
+        z-index: 1030;
+        margin-bottom: 0;
+    }
+
+    // Fixed to the bottom on the browser
+    &.fixed-bottom {
+        bottom: 0;
+
+        // Reverse the dropdown menu to get the
+        // Caret aka arrow pointing down and put the dropdown above the menu
+        .dropdown-menu {
+            #dropdown > .reversed;
+        }
+
+        // Reverse the caret aka arrow/triangle
+        .caret {
+            #shape > .triangle-reverse(down, 7px, @navigationBarCaretColor) ;
+        }
+    }
+
+    .caret {
+        // Only change color
+        #shape > .triangle-reverse(up, 7px, @navigationBarCaretColor) ;
+    }
+
+    a {
+        #link > .colors(@navigationBarLinkColor, #eee, #eee, #eee, #eee);
+        padding: 10px 15px 10px;
+    }
+
+    li {
+        vertical-align: middle;
+    }
+
+    .container .navigation {
+        // We want inline-block because of the optional dropdown menu
+        #list > .inline-block-list;
+    }
+
+    // Set a background color then hovering a dropdown
+    a.dropdown:hover {
+      //  background-color: #E5E5E5;
+    }
+
+    .divider-vertical {
+        height: @navigationBarHeight;
+        margin: 0 9px;
+        border-left: 1px solid @navigationBarBackground;
+        border-right: 1px solid @navigationBarBackgroundHighlight;
+    }
+}

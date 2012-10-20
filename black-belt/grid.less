@@ -1,0 +1,41 @@
+// The Grid
+#grid {
+
+    .core () {
+
+        .fleX (@index) when (@index > 0) {
+            (~".flex@{index}") { .flex(@index); }
+            .fleX(@index - 1);
+        }
+        .fleX (0) {}
+
+
+
+        .flex (@ratio) {
+            #box > .flex(@ratio)
+        }
+
+        .grid {
+            #box > .display;
+        }
+
+
+        [class*="flex"] {
+            padding: 12px;
+        }
+
+    // generate .spanX and .offsetX
+        .fleX (12);
+    }
+}
+
+#grid > .core();
+
+
+.grid-center {
+    #box > .pack(center);
+}
+
+.container {
+    .center-block(940px);
+}

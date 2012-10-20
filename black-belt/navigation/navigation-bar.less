@@ -1,0 +1,45 @@
+// navigation-bar is a bar with links that can be
+// fixed or static.
+.navigation-bar {
+    // The height of the bar
+    height:@navigationBarHeight;
+    line-height: @navigationBarHeight;
+
+    #gradient > .vertical(@navigationBarBackground, @navigationBarBackgroundHighlight);
+
+    // Fixed to the top or bottom of the browser
+    &.fixed-bottom, &.fixed-top {
+        // Stretch the bar from left:0 to right: 0
+        .stretch(x, fixed);
+        z-index: 1030;
+        margin-bottom: 0;
+    }
+
+    // Set top position to the top of the page
+    &.fixed-top {
+        top:0;
+    }
+
+    // Fixed to the bottom on the browser
+    &.fixed-bottom {
+        bottom: 0;
+    }
+
+   .container > ul > li > a {
+        #link > .colors(@navigationBarLinkColor, #eee, #eee, #eee, #eee);
+        padding: 0 15px;
+
+    }
+}
+
+.navigation-bar.fixed-bottom {
+    ul {
+        .border-top-radius(5px);
+    }
+}
+
+.navigation-bar.fixed-top {
+    ul {
+        .border-bottom-radius(5px);
+    }
+}

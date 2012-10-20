@@ -1,0 +1,26 @@
+.navigation-horizontal {
+    .sub-navigation > li > .sub-navigation,
+    .drop-menu {
+        width: 300px;
+        padding: 5px 0;
+        > li > a {
+            display: block;
+            padding: 3px 20px;
+            &:hover {
+                #gradient > .vertical(#08c, spin(#08c, 20%));
+            }
+        }
+    }
+}
+
+.dropup, .fixed-bottom {
+    .sub-navigation > li > .sub-navigation,
+    .drop-menu {
+        top: auto;
+        bottom: 100%;
+    }
+}
+
+.dropdown, .fixed-top {
+    .drop-menu { }
+}
